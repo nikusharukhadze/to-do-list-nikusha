@@ -1,0 +1,18 @@
+<div class="to-do">
+    <div *ngIf = !isInEditMode>
+        <h4 [class.completed] = "todo.completed">{{todo.title}}</h4>
+        <p [class.completed] = "todo.completed"> {{todo.description}}</p>
+    </div>
+       
+     <div *ngIf = isInEditMode>
+         <input type="text"  name="title"  [(ngModel)] = "todo.title">
+         <input type="text"  name="description" [(ngModel)] = "todo.description">
+       
+     </div>
+
+    
+
+    <button (click) = "deleteTodo ()">Delete To Do</button>
+    <button (click) = "editTodo ()">{{editBtnTitle}}</button>
+    <button (click) = "completedTodoBtn ()">Completed</button>
+</div>

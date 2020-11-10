@@ -1,0 +1,10 @@
+.to-do {
+    padding: 10px;
+    border: 1px solid grey;
+    border-radius: 8px;
+    width: 300px;
+}
+
+.completed {
+    text-decoration: line-through;
+}
