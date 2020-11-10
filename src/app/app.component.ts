@@ -72,12 +72,25 @@ alert("undefined")
      
 
     })
+
   }
-  // submitUserForm(userForm) {
+  
+  submitUserForm(userForm) {
+    if ( userForm.value.title=== '' || userForm.value.description === '' ){ 
+      alert("undefined")
+          }
+       else {
+          const newTodo = new TodoModel (undefined, userForm.value.title, userForm.value.description);
+          this.todoService.addTodos(newTodo)
+          .subscribe ((data) =>{
+            (userForm.value.title = ""),
+            (userForm.value.description = ""),
+
+            newTodo.id = data.id;
+            this.todos.push(newTodo);
+          });
     
-  //   console.log(userForm.value)
     
-  // }
+  }
+  }
 }
-
-
